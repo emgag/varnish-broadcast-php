@@ -1,5 +1,9 @@
 # PHP client for varnish-broadcast
 
+[![Build Status](https://travis-ci.org/emgag/varnish-broadcast-php.svg?branch=master)](https://travis-ci.org/emgag/varnish-broadcast-php)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![Packagist Version](https://img.shields.io/packagist/v/emgag/varnish-broadcast.svg)](https://packagist.org/packages/emgag/varnish-broadcast)
+
 A PHP client for [varnish-broadcast](https://github.com/emgag/varnish-broadcast).
 
 ## Installation
