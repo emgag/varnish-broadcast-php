@@ -1,0 +1,32 @@
+{
+  "title": "Request",
+  "type": "object",
+  "properties": {
+    "command": {
+      "type": "string",
+      "enum": [
+        "ban",
+        "ban.url",
+        "purge",
+        "xkey",
+        "xkey.soft"
+      ]
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "command",
+    "host",
+    "value"
+  ]
+}
+
