@@ -41,4 +41,25 @@ class VarnishBroadcastTest extends TestCase
             $this->assertFalse($validator->fails());
         }
     }
+
+    /**
+     * Test if basic request validation works.
+     */
+    public function testValidation()
+    {
+        $req = new Request\Ban('', []);
+        $this->assertFalse($req->isValid());
+
+        $req = new Request\Ban('', 'value');
+        $this->assertFalse($req->isValid());
+
+        $req = new Request\Ban('', ['value']);
+        $this->assertFalse($req->isValid());
+
+        $req = new Request\Ban('host', []);
+        $this->assertFalse($req->isValid());
+
+        $req = new Request\Ban('host', ['value']);
+        $this->assertTrue($req->isValid());
+    }
 }

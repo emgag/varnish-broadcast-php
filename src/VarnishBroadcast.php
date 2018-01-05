@@ -88,9 +88,15 @@ class VarnishBroadcast
      * @param RequestInterface $request
      *
      * @return int
+     *
+     * @throws \InvalidArgumentException
      */
     public function send(RequestInterface $request): int
     {
+        if (!$request->isValid()) {
+            throw new \InvalidArgumentException('Invalid request: '.(string) $request);
+        }
+
         return $this->redis->publish($this->channel, (string) $request);
     }
 }

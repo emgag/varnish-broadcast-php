@@ -26,7 +26,7 @@ abstract class AbstractRequest implements RequestInterface
      * AbstractRequest constructor.
      *
      * @param string $host
-     * @param $value
+     * @param        $value
      */
     public function __construct(string $host, $value)
     {
@@ -51,15 +51,25 @@ abstract class AbstractRequest implements RequestInterface
     }
 
     /**
+     * @return bool
+     */
+    public function isValid(): bool
+    {
+        return in_array($this->command, ['ban', 'ban.url', 'purge', 'xkey', 'xkey.soft'], true)
+            && '' !== $this->host
+            && count($this->value) > 0;
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string
     {
         return json_encode(
             [
-            'command' => $this->command,
-            'host' => $this->host,
-            'value' => $this->value,
+                'command' => $this->command,
+                'host' => $this->host,
+                'value' => $this->value,
             ]
         );
     }
