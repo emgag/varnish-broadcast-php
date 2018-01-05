@@ -25,17 +25,15 @@ abstract class AbstractRequest implements RequestInterface
     /**
      * AbstractRequest constructor.
      *
-     * @param string $command
      * @param string $host
      * @param $value
      */
-    public function __construct(string $command, string $host, $value)
+    public function __construct(string $host, $value)
     {
         if (!is_array($value)) {
             $value = [$value];
         }
 
-        $this->command = $command;
         $this->host = $host;
         $this->value = $value;
     }

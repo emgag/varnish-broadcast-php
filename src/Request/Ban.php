@@ -7,14 +7,5 @@ namespace Emgag\VarnishBroadcast\Request;
  */
 class Ban extends AbstractRequest
 {
-    /**
-     * Ban constructor.
-     *
-     * @param string          $host
-     * @param string|string[] $value
-     */
-    public function __construct(string $host, $value)
-    {
-        parent::__construct('ban', $host, $value);
-    }
+    protected $command = 'ban';
 }

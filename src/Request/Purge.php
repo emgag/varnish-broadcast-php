@@ -7,14 +7,5 @@ namespace Emgag\VarnishBroadcast\Request;
  */
 class Purge extends AbstractRequest
 {
-    /**
-     * Purge constructor.
-     *
-     * @param string          $host
-     * @param string|string[] $value
-     */
-    public function __construct(string $host, $value)
-    {
-        parent::__construct('purge', $host, $value);
-    }
+    protected $command = 'purge';
 }
