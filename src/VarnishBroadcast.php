@@ -1,13 +1,13 @@
 <?php
 
-namespace Emgag\VarnishBroadcast;
+namespace Emgag\VarnishTowncrier;
 
-use Emgag\VarnishBroadcast\Request\RequestInterface;
+use Emgag\VarnishTowncrier\Request\RequestInterface;
 
 /**
- * Class VarnishBroadcast.
+ * Class VarnishTowncrier.
  */
-class VarnishBroadcast
+class VarnishTowncrier
 {
     /**
      * @var \Predis\Client

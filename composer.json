@@ -1,6 +1,6 @@
 {
-  "name": "emgag/varnish-broadcast",
-  "description": "PHP client for varnish-broadcast",
+  "name": "emgag/varnish-towncrier",
+  "description": "PHP client for varnish-towncrier",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Emgag\\VarnishBroadcast\\": "src/"
+      "Emgag\\VarnishTowncrier\\": "src/"
     }
   }
 }

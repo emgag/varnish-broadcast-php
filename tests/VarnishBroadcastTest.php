@@ -1,13 +1,13 @@
 <?php
 
-use Emgag\VarnishBroadcast\Request;
+use Emgag\VarnishTowncrier\Request;
 use League\JsonGuard\Validator;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class VarnishBroadcastTest.
+ * Class VarnishTowncrierTest.
  */
-class VarnishBroadcastTest extends TestCase
+class VarnishTowncrierTest extends TestCase
 {
     /**
      * Test if request object correctly serialize to JSON.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Emgag\VarnishBroadcast\Request;
+namespace Emgag\VarnishTowncrier\Request;
 
 /**
  * Interface RequestInterface.

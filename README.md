@@ -1,21 +1,21 @@
-# PHP client for varnish-broadcast
+# PHP client for varnish-towncrier
 
-[![Build Status](https://travis-ci.org/emgag/varnish-broadcast-php.svg?branch=master)](https://travis-ci.org/emgag/varnish-broadcast-php)
+[![Build Status](https://travis-ci.org/emgag/varnish-towncrier-php.svg?branch=master)](https://travis-ci.org/emgag/varnish-towncrier-php)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-[![Packagist Version](https://img.shields.io/packagist/v/emgag/varnish-broadcast.svg)](https://packagist.org/packages/emgag/varnish-broadcast)
+[![Packagist Version](https://img.shields.io/packagist/v/emgag/varnish-towncrier.svg)](https://packagist.org/packages/emgag/varnish-towncrier)
 
-A PHP client for [varnish-broadcast](https://github.com/emgag/varnish-broadcast).
+A PHP client for [varnish-towncrier](https://github.com/emgag/varnish-towncrier).
 
 ## Installation
 
 ```bash
-composer require emgag/varnish-broadcast
+composer require emgag/varnish-towncrier
 ```
 
 ## Usage
 
 ```php
-use Emgag\VarnishBroadcast\VarnishBroadcast;
+use Emgag\VarnishTowncrier\VarnishTowncrier;
 
 $client = new Predis\Client([
     'scheme' => 'tcp',
@@ -23,7 +23,7 @@ $client = new Predis\Client([
     'port'   => '6379'
 ]);
 
-$vb = new VarnishBroadcast($client);
+$vb = new VarnishTowncrier($client);
 
 // BAN using a varnish VCL expression
 $vb->ban('example.org', 'expression');
@@ -46,9 +46,9 @@ $vb->xkeySoft('example.org', 'key');
 $vb->xkeySoft('example.org', ['multiple', 'keys']);
 ```
 
-See docs for [varnish-broadcast](https://github.com/emgag/varnish-broadcast) for more details.
+See docs for [varnish-towncrier](https://github.com/emgag/varnish-towncrier) for more details.
 
 ## License
 
-varnish-broadcast-php is licensed under the [MIT License](http://opensource.org/licenses/MIT).
+varnish-towncrier-php is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 

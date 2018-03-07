@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/varnish-broadcast-php.iml" filepath="$PROJECT_DIR$/.idea/varnish-broadcast-php.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/varnish-towncrier-php.iml" filepath="$PROJECT_DIR$/.idea/varnish-towncrier-php.iml" />
     </modules>
   </component>
 </project>
