@@ -15,7 +15,7 @@ class VarnishTowncrierTest extends TestCase
     public function testSerialize()
     {
         $hostname = 'example.org';
-        $json = [];
+        $json     = [];
 
         // ban
         $json[] = (string) (new Request\Ban($hostname, 'whatever'));
@@ -51,10 +51,10 @@ class VarnishTowncrierTest extends TestCase
         $this->assertFalse($req->isValid());
 
         $req = new Request\Ban('', 'value');
-        $this->assertFalse($req->isValid());
+        $this->assertTrue($req->isValid());
 
         $req = new Request\Ban('', ['value']);
-        $this->assertFalse($req->isValid());
+        $this->assertTrue($req->isValid());
 
         $req = new Request\Ban('host', []);
         $this->assertFalse($req->isValid());

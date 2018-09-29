@@ -25,7 +25,7 @@ class VarnishTowncrier
      */
     public function __construct(\Predis\Client $redisClient, string $channel = 'varnish.purge')
     {
-        $this->redis = $redisClient;
+        $this->redis   = $redisClient;
         $this->channel = $channel;
     }
 

@@ -34,7 +34,7 @@ abstract class AbstractRequest implements RequestInterface
             $value = [$value];
         }
 
-        $this->host = $host;
+        $this->host  = $host;
         $this->value = $value;
     }
 
@@ -56,7 +56,6 @@ abstract class AbstractRequest implements RequestInterface
     public function isValid(): bool
     {
         return in_array($this->command, ['ban', 'ban.url', 'purge', 'xkey', 'xkey.soft'], true)
-            && '' !== $this->host
             && count($this->value) > 0;
     }
 
@@ -65,12 +64,15 @@ abstract class AbstractRequest implements RequestInterface
      */
     public function __toString(): string
     {
-        return json_encode(
-            [
-                'command' => $this->command,
-                'host' => $this->host,
-                'value' => $this->value,
-            ]
-        );
+        $payload = [
+            'command' => $this->command,
+            'value'   => $this->value,
+        ];
+
+        if ($this->host !== '') {
+            $payload['host'] = $this->host;
+        }
+
+        return json_encode($payload);
     }
 }
