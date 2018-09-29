@@ -3,8 +3,7 @@
 all: cs-fixer test
 
 cs-fixer:
-	php-cs-fixer fix --rules=\@Symfony src/
-	php-cs-fixer fix --rules=\@Symfony tests/
+	php-cs-fixer fix --config .php_cs
 
 test:
 	vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
