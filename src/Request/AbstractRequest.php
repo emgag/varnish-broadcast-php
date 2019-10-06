@@ -25,8 +25,8 @@ abstract class AbstractRequest implements RequestInterface
     /**
      * AbstractRequest constructor.
      *
-     * @param string $host
-     * @param        $value
+     * @param string       $host
+     * @param string|array $value
      */
     public function __construct(string $host, $value)
     {
@@ -39,7 +39,7 @@ abstract class AbstractRequest implements RequestInterface
     }
 
     /**
-     * @param $value
+     * @param string|array $value
      *
      * @return AbstractRequest
      */
