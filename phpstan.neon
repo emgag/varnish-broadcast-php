@@ -1,0 +1,6 @@
+parameters:
+    autoload_directories:
+        - tests/
+    ignoreErrors:
+        - '#should return string but returns string\|false.#'
+        - '#of function json_decode expects string, string\|false given.#'
