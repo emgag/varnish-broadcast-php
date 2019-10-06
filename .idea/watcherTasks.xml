@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="fix --config=$ProjectFileDir$/.php_cs $FilePath$" />
+      <option name="arguments" value="fix --config=$ProjectFileDir$/.php_cs.dist $FilePath$" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />
@@ -14,7 +14,7 @@
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
-      <option name="program" value="$COMPOSER_BIN_DIR$/php-cs-fixer" />
+      <option name="program" value="$ProjectFileDir$/vendor/bin/php-cs-fixer" />
       <option name="runOnExternalChanges" value="true" />
       <option name="scopeName" value="Current File" />
       <option name="trackOnlyRoot" value="false" />
