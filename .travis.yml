@@ -10,6 +10,6 @@ install:
     - travis_retry composer install --no-interaction --prefer-source
 
 script:
-    - vendor/bin/phpstan analyse -l max src/ tests/
-    - vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
+    - make analyse
+    - make test
 

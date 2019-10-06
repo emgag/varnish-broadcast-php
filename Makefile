@@ -1,9 +1,12 @@
-.PHONY: csfix test
+.PHONY: analyse format test
 
-all: cs-fixer test
+all: analyse format test
 
-cs-fixer:
-	php-cs-fixer fix --config .php_cs
+analyse:
+	vendor/bin/phpstan analyse -l max src/ tests/
+
+format:
+	vendor/bin/php-cs-fixer fix
 
 test:
 	vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
