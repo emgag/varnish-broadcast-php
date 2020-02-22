@@ -1,6 +1,6 @@
 # PHP client for varnish-towncrier
 
-[![Build Status](https://travis-ci.org/emgag/varnish-towncrier-php.svg?branch=master)](https://travis-ci.org/emgag/varnish-towncrier-php)
+![build](https://github.com/emgag/varnish-towncrier-php/workflows/build/badge.svg)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![Packagist Version](https://img.shields.io/packagist/v/emgag/varnish-towncrier.svg)](https://packagist.org/packages/emgag/varnish-towncrier)
 
