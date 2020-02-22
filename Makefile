@@ -9,4 +9,4 @@ format:
 	vendor/bin/php-cs-fixer fix
 
 test:
-	vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
+	vendor/bin/phpunit
