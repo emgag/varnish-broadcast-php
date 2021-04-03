@@ -4,9 +4,6 @@ namespace Emgag\VarnishTowncrier;
 
 use Emgag\VarnishTowncrier\Request\RequestInterface;
 
-/**
- * Class VarnishTowncrier.
- */
 class VarnishTowncrier
 {
     /**
@@ -19,10 +16,6 @@ class VarnishTowncrier
      */
     private $channel;
 
-    /**
-     * @param \Predis\Client $redisClient
-     * @param string         $channel
-     */
     public function __construct(\Predis\Client $redisClient, string $channel = 'varnish.purge')
     {
         $this->redis   = $redisClient;
@@ -30,10 +23,7 @@ class VarnishTowncrier
     }
 
     /**
-     * @param string          $host
      * @param string|string[] $expression
-     *
-     * @return int
      */
     public function ban(string $host, $expression): int
     {
@@ -41,10 +31,7 @@ class VarnishTowncrier
     }
 
     /**
-     * @param string          $host
      * @param string|string[] $pattern
-     *
-     * @return int
      */
     public function banURL(string $host, $pattern): int
     {
@@ -52,10 +39,7 @@ class VarnishTowncrier
     }
 
     /**
-     * @param string          $host
      * @param string|string[] $path
-     *
-     * @return int
      */
     public function purge(string $host, $path): int
     {
@@ -63,10 +47,7 @@ class VarnishTowncrier
     }
 
     /**
-     * @param string          $host
      * @param string|string[] $keys
-     *
-     * @return int
      */
     public function xkey(string $host, $keys): int
     {
@@ -74,10 +55,7 @@ class VarnishTowncrier
     }
 
     /**
-     * @param string          $host
      * @param string|string[] $keys
-     *
-     * @return int
      */
     public function xkeySoft(string $host, $keys): int
     {
@@ -85,10 +63,6 @@ class VarnishTowncrier
     }
 
     /**
-     * @param RequestInterface $request
-     *
-     * @return int
-     *
      * @throws \InvalidArgumentException
      */
     public function send(RequestInterface $request): int

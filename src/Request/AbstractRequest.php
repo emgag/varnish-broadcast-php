@@ -2,9 +2,6 @@
 
 namespace Emgag\VarnishTowncrier\Request;
 
-/**
- * Class AbstractRequest.
- */
 abstract class AbstractRequest implements RequestInterface
 {
     /**
@@ -23,9 +20,6 @@ abstract class AbstractRequest implements RequestInterface
     protected $value = [];
 
     /**
-     * AbstractRequest constructor.
-     *
-     * @param string       $host
      * @param string|array $value
      */
     public function __construct(string $host, $value)
@@ -39,7 +33,7 @@ abstract class AbstractRequest implements RequestInterface
     }
 
     /**
-     * @param string|array $value
+     * @param string|string[] $value
      *
      * @return AbstractRequest
      */
@@ -50,18 +44,12 @@ abstract class AbstractRequest implements RequestInterface
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isValid(): bool
     {
         return in_array($this->command, ['ban', 'ban.url', 'purge', 'xkey', 'xkey.soft'], true)
             && count($this->value) > 0;
     }
 
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
         $payload = [

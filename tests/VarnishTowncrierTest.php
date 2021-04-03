@@ -1,7 +1,6 @@
 <?php
 
 use Emgag\VarnishTowncrier\Request;
-use League\JsonGuard\Validator;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -34,11 +33,16 @@ class VarnishTowncrierTest extends TestCase
         $json[] = (string) (new Request\XkeySoft($hostname, ['still', 'flying']));
 
         // validate json
-        $schema = json_decode(file_get_contents(__DIR__.'/files/request.json'));
-
         foreach ($json as $request) {
-            $validator = new Validator(json_decode($request), $schema);
-            $this->assertFalse($validator->fails());
+            $validator = new \JsonSchema\Validator();
+            $schema    = json_decode(
+                file_get_contents(__DIR__.'/files/request.json'),
+                JSON_THROW_ON_ERROR
+            );
+
+            $data = json_decode($request);
+            $validator->validate($data, $schema);
+            self::assertTrue($validator->isValid());
         }
     }
 
@@ -48,18 +52,18 @@ class VarnishTowncrierTest extends TestCase
     public function testValidation()
     {
         $req = new Request\Ban('', []);
-        $this->assertFalse($req->isValid());
+        self::assertFalse($req->isValid());
 
         $req = new Request\Ban('', 'value');
-        $this->assertTrue($req->isValid());
+        self::assertTrue($req->isValid());
 
         $req = new Request\Ban('', ['value']);
-        $this->assertTrue($req->isValid());
+        self::assertTrue($req->isValid());
 
         $req = new Request\Ban('host', []);
-        $this->assertFalse($req->isValid());
+        self::assertFalse($req->isValid());
 
         $req = new Request\Ban('host', ['value']);
-        $this->assertTrue($req->isValid());
+        self::assertTrue($req->isValid());
     }
 }
